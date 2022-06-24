@@ -1,0 +1,562 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 24-06-2022 a las 05:50:25
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `bdcolegiosan`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumno`
+--
+
+CREATE TABLE `alumno` (
+  `IdAlumno` varchar(5) NOT NULL,
+  `ApeAlumno` varchar(30) DEFAULT NULL,
+  `NomAlumno` varchar(30) DEFAULT NULL,
+  `Idgra` varchar(3) DEFAULT NULL,
+  `PROCE` varchar(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `alumno`
+--
+
+INSERT INTO `alumno` (`IdAlumno`, `ApeAlumno`, `NomAlumno`, `Idgra`, `PROCE`) VALUES
+('A0001', 'Donayre Mena', 'Christian', 'E01', 'N'),
+('A0002', 'Ortiz Rodriguez', 'Freddy', 'E02', 'P'),
+('A0003', 'Silva Mejia', 'Ruth Ketty', 'E03', 'N'),
+('A0004', 'Melendez Noriega', 'Liliana', 'E01', 'P'),
+('A0005', 'Huerta Leon', 'Silvia', 'E02', 'N'),
+('A0006', 'Carranza Fuentes', 'Maria Elena', 'E03', 'P'),
+('A0007', 'Prado Castro', 'Gabriela', 'E01', 'N'),
+('A0008', 'Atuncar Mesias', 'Juan', 'E02', 'P'),
+('A0009', 'Aguilar Zavala', 'Patricia Elena', 'E03', 'P'),
+('A0010', 'Rodruigez Trujillo', 'Rubén Eduardo', 'E01', 'N'),
+('A0011', 'Canales Ruiz', 'Gino Leonel', 'E02', 'P'),
+('A0012', 'Ruiz Quispe', 'Edgar', 'E03', 'N'),
+('A0013', 'PanduroTerrazas', 'Omar', 'E01', 'P'),
+('A0014', 'Zita Padilla', 'Peter Wilmer', 'E02', 'N'),
+('A0015', 'Ternero Ubillús', 'Luis', 'E03', 'P'),
+('A0016', 'Rivera García', 'Raúl Joel', 'E01', 'P'),
+('A0017', 'Pomar García', 'Ana', 'E02', 'P'),
+('A0018', 'Palomares Venegas', 'Mercedes', 'E03', 'N'),
+('A0019', 'Ruiz Venegaz', 'Luis Alberto', 'E01', 'P'),
+('A0020', 'Tejada Bernal', 'Janet', 'E02', 'P'),
+('A0021', 'Sotelo Canales', 'Juan Carlos', 'E03', 'P'),
+('A0022', 'LLosa Montalvan', 'Karla', 'E01', 'P'),
+('A0023', 'Galarza Torres', 'Hugo', 'E02', 'P'),
+('A0024', 'Valverde Jaramillo', 'Saul', 'E03', 'N'),
+('A0025', 'Cipriano Avila', 'Roxana', 'E01', 'N'),
+('A0026', 'Rodriguez Quispe', 'Luis Alberto', 'E02', 'P'),
+('A0027', 'Huerta Leon', 'Marco Antonio', 'E03', 'N'),
+('A0028', 'Ortiz Fuentes', 'Ana María', 'E01', 'P'),
+('A0029', 'Rivera Jaramillo', 'Martha', 'E02', 'P'),
+('A0030', 'Bustamante Campos', 'Guino', 'E03', 'N');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asistencias`
+--
+
+CREATE TABLE `asistencias` (
+  `idAlumno` varchar(5) NOT NULL,
+  `IdCurso` varchar(4) DEFAULT NULL,
+  `nroAsis` int(11) NOT NULL,
+  `diasAsis` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `asistencias`
+--
+
+INSERT INTO `asistencias` (`idAlumno`, `IdCurso`, `nroAsis`, `diasAsis`) VALUES
+('A0001', 'C001', 12, 30),
+('A0001', 'C002', 20, 30),
+('A0001', 'C003', 25, 30),
+('A0002', 'C001', 20, 30),
+('A0002', 'C002', 22, 30),
+('A0002', 'C003', 15, 30),
+('A0003', 'C001', 23, 30),
+('A0003', 'C002', 10, 30),
+('A0003', 'C003', 16, 30),
+('A0004', 'C001', 25, 30),
+('A0004', 'C002', 20, 30),
+('A0004', 'C003', 20, 30),
+('A0005', 'C001', 25, 30),
+('A0005', 'C002', 25, 30),
+('A0005', 'C003', 25, 30),
+('A0006', 'C001', 16, 30),
+('A0006', 'C002', 16, 30),
+('A0006', 'C003', 18, 30),
+('A0007', 'C001', 20, 30),
+('A0007', 'C002', 25, 30),
+('A0007', 'C003', 26, 30),
+('A0008', 'C001', 7, 30),
+('A0008', 'C002', 16, 30),
+('A0008', 'C003', 29, 30),
+('A0009', 'C001', 12, 30),
+('A0009', 'C002', 20, 30),
+('A0009', 'C003', 25, 30),
+('A0010', 'C001', 20, 30),
+('A0010', 'C002', 22, 30),
+('A0010', 'C003', 15, 30),
+('A0011', 'C001', 23, 30),
+('A0011', 'C002', 10, 30),
+('A0011', 'C003', 16, 30),
+('A0012', 'C001', 25, 30),
+('A0012', 'C002', 20, 30),
+('A0012', 'C003', 20, 30),
+('A0013', 'C001', 25, 30),
+('A0013', 'C002', 25, 30),
+('A0013', 'C003', 25, 30),
+('A0014', 'C001', 16, 30),
+('A0014', 'C002', 16, 30),
+('A0014', 'C003', 18, 30),
+('A0015', 'C001', 20, 30),
+('A0015', 'C002', 25, 30),
+('A0015', 'C003', 26, 30),
+('A0016', 'C001', 16, 30),
+('A0016', 'C002', 16, 30),
+('A0016', 'C003', 18, 30),
+('A0017', 'C001', 20, 30),
+('A0017', 'C002', 25, 30),
+('A0017', 'C003', 26, 30),
+('A0018', 'C001', 7, 30),
+('A0018', 'C002', 16, 30),
+('A0018', 'C003', 29, 30),
+('A0019', 'C001', 12, 30),
+('A0019', 'C002', 20, 30),
+('A0019', 'C003', 25, 30),
+('A0020', 'C001', 20, 30),
+('A0020', 'C002', 22, 30),
+('A0020', 'C003', 15, 30),
+('A0021', 'C001', 23, 30),
+('A0021', 'C002', 10, 30),
+('A0021', 'C003', 16, 30),
+('A0022', 'C001', 25, 30),
+('A0022', 'C002', 20, 30),
+('A0022', 'C003', 20, 30),
+('A0023', 'C001', 25, 30),
+('A0023', 'C002', 25, 30),
+('A0023', 'C003', 25, 30),
+('A0024', 'C001', 16, 30),
+('A0024', 'C002', 16, 30),
+('A0024', 'C003', 18, 30),
+('A0025', 'C001', 20, 30),
+('A0025', 'C002', 25, 30),
+('A0025', 'C003', 26, 30),
+('A0026', 'C001', 16, 30),
+('A0026', 'C002', 16, 30),
+('A0026', 'C003', 18, 30),
+('A0027', 'C001', 15, 30),
+('A0027', 'C002', 12, 30),
+('A0027', 'C003', 25, 30),
+('A0028', 'C001', 18, 30),
+('A0028', 'C002', 18, 30),
+('A0028', 'C003', 18, 30),
+('A0029', 'C001', 26, 30),
+('A0029', 'C002', 26, 30),
+('A0029', 'C003', 28, 30),
+('A0030', 'C001', 30, 30),
+('A0030', 'C002', 30, 30),
+('A0030', 'C003', 30, 30);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asistenciasprofesor`
+--
+
+CREATE TABLE `asistenciasprofesor` (
+  `id` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `fecha_entrada` date NOT NULL,
+  `hora_entrada` varchar(15) NOT NULL,
+  `fecha_salida` date DEFAULT NULL,
+  `hora_salida` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `asistenciasprofesor`
+--
+
+INSERT INTO `asistenciasprofesor` (`id`, `id_usuario`, `fecha_entrada`, `hora_entrada`, `fecha_salida`, `hora_salida`) VALUES
+(1, 4, '2022-05-04', '07:50:39', '2022-05-04', '13:20:49'),
+(2, 5, '2022-05-04', '07:56:47', '2022-05-04', '13:05:36'),
+(3, 6, '2022-05-04', '07:28:49', '2022-05-04', '13:47:36'),
+(4, 3, '2022-05-04', '07:14:14', '2022-05-04', '13:53:58'),
+(5, 2, '2022-05-04', '08:54:06', '2022-05-04', '13:02:08'),
+(6, 1, '2022-05-04', '08:45:08', '2022-05-04', '13:09:36'),
+(7, 4, '2022-05-05', '08:59:39', '2022-05-05', '13:08:49'),
+(8, 5, '2022-05-05', '14:05:36', '2022-05-05', '18:20:06'),
+(9, 6, '2022-05-05', '14:00:25', '2022-05-05', '18:53:58'),
+(10, 3, '2022-05-05', '14:45:14', '2022-05-05', '18:00:45'),
+(11, 2, '2022-05-05', '14:20:00', '2022-05-05', '18:10:00'),
+(12, 1, '2022-05-05', '14:36:14', '2022-05-05', '18:36:14'),
+(13, 4, '2022-05-06', '14:36:14', '2022-05-06', '18:47:00'),
+(14, 5, '2022-05-06', '07:15:17', '2022-05-06', '13:00:06'),
+(15, 6, '2022-05-06', '07:00:15', '2022-05-06', '13:25:10'),
+(16, 1, '2022-05-06', '07:35:19', '2022-05-06', '13:17:17'),
+(17, 3, '2022-05-27', '07:28:49', '2022-05-27', '13:02:08'),
+(18, 2, '2022-05-27', '08:45:08', '2022-05-27', '13:53:58'),
+(19, 4, '2022-05-27', '14:05:36', '2022-05-27', '18:53:58'),
+(20, 1, '2022-05-27', '14:00:25', '2022-05-27', '18:00:45');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `colegio`
+--
+
+CREATE TABLE `colegio` (
+  `id` int(11) NOT NULL,
+  `id_horario` int(11) NOT NULL,
+  `nom_cargo` varchar(50) NOT NULL,
+  `genero` varchar(15) NOT NULL,
+  `nro_documento` varchar(20) NOT NULL,
+  `nombres` varchar(45) NOT NULL,
+  `apellido_paterno` varchar(45) NOT NULL,
+  `apellido_materno` varchar(45) NOT NULL,
+  `telefono` varchar(11) DEFAULT NULL,
+  `correo_electronico` varchar(160) DEFAULT NULL,
+  `nom_curso` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `colegio`
+--
+
+INSERT INTO `colegio` (`id`, `id_horario`, `nom_cargo`, `genero`, `nro_documento`, `nombres`, `apellido_paterno`, `apellido_materno`, `telefono`, `correo_electronico`, `nom_curso`) VALUES
+(1, 1, 'Administrador', 'Masculino', '70542563', 'Manuel', 'Cardenas', 'Salazar', '987425632', 'manuel@admin.com', ''),
+(2, 2, 'Docente', 'Femenino', '54125632', 'Maria', 'Fernandez', 'Quispe', '987425632', 'maria@profesor.com', 'Matematica'),
+(3, 1, 'Docente', 'Masculino', '41523652', 'Jorge', 'Contreras', 'Montenegro', '987425632', 'jorge@profesor.com', 'Lenguaje'),
+(4, 2, 'Docente', 'Femenino', '13464324', 'Daniela', 'Gomez', 'Salvatierra', '987452156', 'daniela@profesor.com', 'RV'),
+(5, 1, 'Docente', 'Masculino', '14543678', 'Fernando', 'Alarcon', 'Guevara', '988999235', 'fernando@profesor.com', 'Lenguaje'),
+(6, 2, 'Docente', 'Femenino', '37125632', 'Paula', 'Alvarez', 'Guzman', '2584125', 'paula@profesor.com', 'Matematica');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `curso`
+--
+
+CREATE TABLE `curso` (
+  `IdCurso` varchar(4) NOT NULL,
+  `NomCurso` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `curso`
+--
+
+INSERT INTO `curso` (`IdCurso`, `NomCurso`) VALUES
+('C001', 'Matematica'),
+('C002', 'Lenguaje'),
+('C003', 'RV');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cursosprofesores`
+--
+
+CREATE TABLE `cursosprofesores` (
+  `id` varchar(5) NOT NULL,
+  `nom_curso` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cursosprofesores`
+--
+
+INSERT INTO `cursosprofesores` (`id`, `nom_curso`) VALUES
+('C001', 'Matematica'),
+('C002', 'Lenguaje'),
+('C003', 'RV');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `grado`
+--
+
+CREATE TABLE `grado` (
+  `Idgra` varchar(3) DEFAULT NULL,
+  `Nomgra` varchar(30) DEFAULT NULL,
+  `costo` decimal(10,0) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `grado`
+--
+
+INSERT INTO `grado` (`Idgra`, `Nomgra`, `costo`) VALUES
+('E01', 'Inicial', '250'),
+('E02', 'Primaria', '300'),
+('E03', 'Secundaria', '350');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `horarios`
+--
+
+CREATE TABLE `horarios` (
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(45) NOT NULL,
+  `hora_entrada` varchar(15) NOT NULL,
+  `hora_salida` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `horarios`
+--
+
+INSERT INTO `horarios` (`id`, `descripcion`, `hora_entrada`, `hora_salida`) VALUES
+(1, 'Mañana', '08:00:00', '13:00:00'),
+(2, 'Tarde', '14:00:00', '18:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notas`
+--
+
+CREATE TABLE `notas` (
+  `IdAlumno` varchar(5) DEFAULT NULL,
+  `IdCurso` varchar(4) DEFAULT NULL,
+  `ExaMen` float DEFAULT NULL,
+  `ExaTrim` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `notas`
+--
+
+INSERT INTO `notas` (`IdAlumno`, `IdCurso`, `ExaMen`, `ExaTrim`) VALUES
+('A0001', 'C001', 11, 13),
+('A0001', 'C002', 9, 13),
+('A0001', 'C003', 18, 13),
+('A0002', 'C001', 15, 13),
+('A0002', 'C002', 11, 13),
+('A0002', 'C003', 14, 13),
+('A0003', 'C001', 16, 13),
+('A0003', 'C002', 8, 13),
+('A0003', 'C003', 7, 13),
+('A0004', 'C001', 11, 13),
+('A0004', 'C002', 11, 13),
+('A0004', 'C003', 11, 13),
+('A0005', 'C001', 17, 13),
+('A0005', 'C002', 12, 13),
+('A0005', 'C003', 11, 13),
+('A0006', 'C001', 11, 15),
+('A0006', 'C002', 11, 12),
+('A0006', 'C003', 8, 13),
+('A0007', 'C001', 11, 13),
+('A0007', 'C002', 17, 13),
+('A0007', 'C003', 11, 13),
+('A0008', 'C001', 11, 13),
+('A0008', 'C002', 5, 13),
+('A0008', 'C003', 7, 13),
+('A0009', 'C001', 11, 13),
+('A0009', 'C002', 11, 13),
+('A0009', 'C003', 11, 13),
+('A0010', 'C001', 11, 13),
+('A0010', 'C002', 11, 13),
+('A0010', 'C003', 11, 13),
+('A0011', 'C001', 11, 13),
+('A0011', 'C002', 11, 13),
+('A0011', 'C003', 11, 13),
+('A0012', 'C001', 11, 13),
+('A0012', 'C002', 15, 10),
+('A0012', 'C003', 17, 10),
+('A0013', 'C001', 11, 3),
+('A0013', 'C002', 7, 10),
+('A0013', 'C003', 15, 13),
+('A0014', 'C001', 11, 13),
+('A0014', 'C002', 12, 13),
+('A0014', 'C003', 15, 13),
+('A0015', 'C001', 11, 13),
+('A0015', 'C002', 14, 13),
+('A0015', 'C003', 15, 12),
+('A0016', 'C001', 11, 13),
+('A0016', 'C002', 12, 11),
+('A0016', 'C003', 17, 12),
+('A0021', 'C001', 11, 17),
+('A0021', 'C002', 14, 3),
+('A0021', 'C003', 17, 13),
+('A0022', 'C001', 11, 13),
+('A0022', 'C002', 8, 13),
+('A0022', 'C003', 7, 13),
+('A0023', 'C001', 10, 13),
+('A0023', 'C002', 12, 13),
+('A0023', 'C003', 18, 13),
+('A0024', 'C001', 10, 3),
+('A0024', 'C002', 11, 9),
+('A0024', 'C003', 16, 8),
+('A0025', 'C001', 1, 13),
+('A0025', 'C002', 10, 18),
+('A0025', 'C003', 17, 7),
+('A0026', 'C001', 14, 13),
+('A0026', 'C002', 10, 18),
+('A0026', 'C003', 17, 7),
+('A0027', 'C001', 12, 13),
+('A0027', 'C002', 18, 18),
+('A0027', 'C003', 17, 17),
+('A0028', 'C001', 15, 13),
+('A0028', 'C002', 20, 18),
+('A0028', 'C003', 18, 17),
+('A0029', 'C001', 15, 15),
+('A0029', 'C002', 20, 20),
+('A0029', 'C003', 17, 12),
+('A0030', 'C001', 18, 13),
+('A0030', 'C002', 11, 18),
+('A0030', 'C003', 15, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pagos`
+--
+
+CREATE TABLE `pagos` (
+  `IdAlumno` varchar(5) DEFAULT NULL,
+  `SEMESTRE` varchar(6) DEFAULT NULL,
+  `NCUOTA` int(11) DEFAULT NULL,
+  `MONTO` decimal(10,0) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pagos`
+--
+
+INSERT INTO `pagos` (`IdAlumno`, `SEMESTRE`, `NCUOTA`, `MONTO`) VALUES
+('A0001', '2022-1', 1, '1500'),
+('A0001', '2022-2', 2, '1000'),
+('A0002', '2022-1', 1, '1800'),
+('A0002', '2022-2', 2, '1200'),
+('A0003', '2022-1', 1, '2100'),
+('A0003', '2022-2', 2, '1400'),
+('A0004', '2022-1', 1, '1500'),
+('A0004', '2022-2', 2, '1000'),
+('A0005', '2022-1', 1, '1800'),
+('A0005', '2022-2', 2, '1200'),
+('A0006', '2022-1', 1, '2100'),
+('A0006', '2022-2', 2, '1400'),
+('A0007', '2022-1', 1, '1500'),
+('A0007', '2022-2', 2, '1000'),
+('A0008', '2022-1', 1, '1800'),
+('A0008', '2022-2', 2, '1200'),
+('A0009', '2022-1', 1, '2100'),
+('A0009', '2022-2', 2, '1400'),
+('A0010', '2022-1', 1, '1500'),
+('A0010', '2022-2', 2, '1000'),
+('A0011', '2022-1', 1, '1800'),
+('A0011', '2022-2', 2, '1200'),
+('A0012', '2022-1', 1, '2100'),
+('A0012', '2022-2', 2, '1400'),
+('A0013', '2022-1', 1, '1500'),
+('A0013', '2022-2', 2, '1000'),
+('A0014', '2022-1', 1, '1800'),
+('A0014', '2022-2', 2, '1200'),
+('A0015', '2022-1', 1, '2100'),
+('A0015', '2022-2', 2, '1400'),
+('A0016', '2022-1', 1, '1500'),
+('A0016', '2022-2', 2, '1000'),
+('A0017', '2022-1', 1, '1800'),
+('A0017', '2022-2', 2, '1200'),
+('A0018', '2022-1', 1, '2100'),
+('A0018', '2022-2', 2, '1400'),
+('A0019', '2022-1', 1, '1500'),
+('A0019', '2022-2', 2, '1000'),
+('A0020', '2022-1', 1, '1800'),
+('A0020', '2022-2', 2, '1200'),
+('A0021', '2022-1', 1, '2100'),
+('A0021', '2022-2', 2, '1400'),
+('A0022', '2022-1', 1, '1500'),
+('A0022', '2022-2', 2, '1000'),
+('A0023', '2022-1', 1, '1800'),
+('A0023', '2022-2', 2, '1200'),
+('A0024', '2022-1', 1, '2100'),
+('A0024', '2022-2', 2, '1400'),
+('A0025', '2022-1', 1, '1500'),
+('A0025', '2022-2', 2, '1000'),
+('A0026', '2022-1', 1, '1800'),
+('A0026', '2022-2', 2, '1200'),
+('A0027', '2022-1', 1, '2100'),
+('A0027', '2022-2', 2, '1400'),
+('A0028', '2022-1', 1, '1500'),
+('A0028', '2022-2', 2, '1000'),
+('A0029', '2022-1', 1, '1800'),
+('A0029', '2022-2', 2, '1200'),
+('A0030', '2022-1', 1, '2100'),
+('A0030', '2022-2', 2, '1400');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipos_usuario`
+--
+
+CREATE TABLE `tipos_usuario` (
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tipos_usuario`
+--
+
+INSERT INTO `tipos_usuario` (`id`, `descripcion`) VALUES
+(1, 'Docente'),
+(2, 'Administrador');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `id_empleado` int(11) NOT NULL,
+  `id_tipo_usuario` int(11) NOT NULL,
+  `contrasenia` varchar(45) DEFAULT NULL,
+  `correo` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `id_empleado`, `id_tipo_usuario`, `contrasenia`, `correo`) VALUES
+(1, 1, 2, '12345', 'manuel@admin.com'),
+(2, 2, 1, '12345', 'maria@profesor.com'),
+(3, 3, 1, '12345', 'jorge@profesor.com'),
+(4, 4, 1, '12345', 'daniela@profesor.com'),
+(5, 5, 1, '12345', 'fernando@profesor.com'),
+(6, 6, 1, '12345', 'paula@profesor.com');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
